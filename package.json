@@ -1,0 +1,26 @@
+{
+  "name": "ts-react-boilerplate",
+  "version": "0.0.1",
+  "description": "target: typescript 2, webpack 2 + hot-reload, karma + jasmine",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "build": "webpack -p --config webpack/prod.config.js",
+    "dev": "webpack-dev-server --config webpack/dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sotnikov-link/ts-react-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "Valeriy Sotnikov <sotnikov.link@mail.ru> (http://sotnikov.link)",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/sotnikov-link/ts-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/sotnikov-link/ts-react-boilerplate#readme",
+  "devDependencies": {
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  }
+}
