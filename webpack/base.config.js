@@ -3,7 +3,7 @@ var project = require('../project.config');
 
 module.exports = {
   context: path.resolve(project.ROOT, 'src'),
-  entry: { index: ['babel-polyfill', './index.js'] },
+  entry: { index: ['babel-polyfill', './index.jsx'] },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(project.ROOT, 'dist')
@@ -11,7 +11,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /(node_modules)/,
         use: { loader: 'babel-loader' }
       }

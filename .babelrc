@@ -1,12 +1,6 @@
 {
   "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["ie > 8", "last 2 version"]
-        }
-      }
-    ]
+    [ "env", { "targets": { "browsers": ["ie > 8", "last 2 version"] } } ],
+    "react"
   ]
 }
