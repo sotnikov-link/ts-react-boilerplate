@@ -20,7 +20,13 @@
   },
   "homepage": "https://github.com/sotnikov-link/ts-react-boilerplate#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.5.1",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.23.0"
   }
 }
