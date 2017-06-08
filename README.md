@@ -8,6 +8,7 @@
   + hot-reload react
 - eslint
 - ts2
+  - hot-reload react
 - tslint
 - karma
 - jasmine

@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "build": "webpack -p --config webpack/prod.config.js",
     "dev": "webpack-dev-server --config webpack/dev.config.js",
-    "hot": "webpack-dev-server --config webpack/hot.config.js --hot --content-base ./static/ --history-api-fallback --open"
+    "hot": "webpack-dev-server --config webpack/hot.config.js"
   },
   "repository": {
     "type": "git",

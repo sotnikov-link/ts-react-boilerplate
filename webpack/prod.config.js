@@ -1,3 +1,1 @@
-var baseConfig = require('./base.config');
-
-module.exports = baseConfig;
+module.exports = require('./base.config');

@@ -1,12 +1,12 @@
-var path = require('path');
 var project = require('../project.config');
+var path = require('path');
 
 module.exports = {
-  context: path.resolve(project.ROOT, 'src'),
+  context: path.resolve(project.root, 'src'),
   entry: { index: ['babel-polyfill', './index.jsx'] },
   output: {
     filename: '[name].bundle.js',
-    path: path.resolve(project.ROOT, 'dist')
+    path: path.resolve(project.root, 'dist')
   },
   resolve: { extensions: ['.js', '.json', '.jsx'] },
   module: {
