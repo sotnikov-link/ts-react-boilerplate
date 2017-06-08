@@ -1,11 +1,19 @@
-import ReactDOM from 'react-dom';
-import React from 'react';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { AppContainer } from 'react-hot-loader'
+import RootComponent from './RootComponent'
 
-ReactDOM.render(
-  <div>
-    <h1 style={{ width: '50%', margin: '0 auto', textAlign: 'center' }}>
-      Hello! I’m JSX
-    </h1>
-  </div>,
-  document.getElementById('root')
-)
+const render = Component => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root')
+  )
+}
+
+render(RootComponent)
+
+if (module.hot) {
+  module.hot.accept('./RootComponent', () => { render(RootComponent) })
+}
