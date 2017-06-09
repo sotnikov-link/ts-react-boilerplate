@@ -8,7 +8,7 @@ module.exports = {
     index: [
       'babel-polyfill',
 
-      // [1] https://git.io/vH6tq
+      // [1] https://git.io/vH6tq (gaearon/react-hot-boilerplate)
       // [1] activate HMR for React
       'react-hot-loader/patch',
 
@@ -24,23 +24,40 @@ module.exports = {
     ]
   },
   module: {
-    rules: [
-      { test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader' }
+    loaders: [
+      // [3] https://git.io/vHMJO (Glavin001/react-hot-ts)
+      {
+        test: /\.tsx?$/,
+        loaders: [
+          "react-hot-loader/webpack",
+          "awesome-typescript-loader"
+        ],
+        exclude: path.resolve(project.root, 'node_modules'),
+        include: path.resolve(project.root, "src"),
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
+      },
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     // [1] enable HMR globally
+    new webpack.HotModuleReplacementPlugin(),
 
-    new webpack.NamedModulesPlugin(),
     // [1] prints more readable module names in the browser console on HMR updates
+    new webpack.NamedModulesPlugin(),
 
-    new webpack.NoEmitOnErrorsPlugin(),
     // [1] do not emit compiled assets that include errors
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
-  resolve: { extensions: ['.js', '.json', '.jsx'] },
+  resolve: {
+    // [2] http://www.typescriptlang.org/docs/handbook/react-&-webpack.html
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
   output: {
-    path: path.resolve(__dirname, '..', './dist'),
+    path: path.resolve(project.root, 'dist'),
     filename: '[name].bundle.js'
   },
   devServer: {

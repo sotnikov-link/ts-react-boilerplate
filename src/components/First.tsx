@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 
 
-export default class First extends React.Component {
+export default class First extends React.Component<any, any> {
   render() {
     return (
       <div style={{ textAlign: 'center' }}>
@@ -18,6 +18,6 @@ export default class First extends React.Component {
 
   makeErrorToConsoleLog() {
     // test for source-map
-    this.error();
+    this.props.error();
   }
 }
