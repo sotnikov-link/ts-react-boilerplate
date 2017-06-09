@@ -1,13 +1,13 @@
-const project = require('../project.config');
-const webpack = require('webpack');
-const path = require('path');
+var project = require('../project.config');
+var webpack = require('webpack');
+var path = require('path');
+// TODO ↓
+// var baseConfig = require('./base.config');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
   entry: {
     index: [
-      'babel-polyfill',
-
       // [1] https://git.io/vH6tq (gaearon/react-hot-boilerplate)
       // [1] activate HMR for React
       'react-hot-loader/patch',

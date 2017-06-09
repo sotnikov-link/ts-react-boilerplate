@@ -6,13 +6,19 @@
 + wp2
   + dev-server
   + hot-reload react
-- eslint
+- eslint (possible, for config-files)
 + ts2
   + hot-reload react
 - tslint
 - karma
 - jasmine
 - reporter
+```
+
+## Todo
+
+```text
+- delete react-hot-loader from prod-version of bundle
 ```
 
 ## Notes
