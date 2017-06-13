@@ -1,0 +1,22 @@
+{
+  "lintOptions": {
+    "typeCheck": true
+  },
+  "defaultSeverity": "error",
+  "extends": [
+      "tslint:recommended", "tslint-react"
+  ],
+  "jsRules": {
+    "max-line-length": [true, 80]
+  },
+  "rules": {
+    "max-line-length": [true, 80],
+    "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
+    "member-access": [true, "no-public"],
+    "quotemark": [true, "single", "avoid-escape"],
+    "ordered-imports": [false],
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": [true, 2]
+  },
+  "rulesDirectory": []
+}

@@ -9,7 +9,7 @@
 - eslint (possible, for config-files)
 + ts2
   + hot-reload react
-- tslint
++ tslint
 - karma
 - jasmine
 - reporter

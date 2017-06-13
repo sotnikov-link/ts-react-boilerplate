@@ -7,7 +7,8 @@
     "start": "npm run dev",
     "build": "webpack -p --config webpack/prod.config.js",
     "dev": "webpack-dev-server --config webpack/dev.config.js",
-    "hot": "webpack-dev-server --config webpack/hot.config.js"
+    "hot": "webpack-dev-server --config webpack/hot.config.js",
+    "lint": "tslint --force 'src/**/*.ts?(x)'"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,8 @@
     "awesome-typescript-loader": "^3.1.3",
     "react-hot-loader": "^3.0.0-beta.7",
     "source-map-loader": "^0.2.1",
+    "tslint": "^5.4.3",
+    "tslint-react": "^3.0.0",
     "typescript": "^2.3.4",
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5"

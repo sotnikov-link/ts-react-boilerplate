@@ -9,11 +9,11 @@ export default class First extends React.Component<any, any> {
           Hello! I’m JSX
         </h1>
 
-        <button onClick={ this.makeErrorToConsoleLog }>
+        <button onClick={this.makeErrorToConsoleLog}>
           Click me for error to console.log (test of source-map)
         </button>
       </div>
-    )
+    );
   }
 
   makeErrorToConsoleLog() {
