@@ -10,9 +10,10 @@
 + ts2
   + hot-reload react
 + tslint
-- karma
-- jasmine
-- reporter
++ karma
+  + jasmine
+  - coverage
+  - reporter
 ```
 
 ## Todo
