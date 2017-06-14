@@ -1,5 +1,6 @@
 var path = require('path');
 
+
 module.exports = project = {
   root: path.resolve(__dirname),
   devServer: {
@@ -12,4 +13,4 @@ module.exports = project = {
       project.devServer.host, ':', project.devServer.port
     ].join('')
   }
-}
+};

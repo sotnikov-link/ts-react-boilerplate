@@ -16,7 +16,9 @@ ReactDOM.render(
 // Hot Module Replacement API
 if (module.hot) {
   module.hot.accept('./RootComponent', () => {
-    const NextRootComponent = require<RequireImport>('./RootComponent').default;
+    const NextRootComponent = require<IRequireImport>(
+      './RootComponent'
+    ).default;
     ReactDOM.render(
       <AppContainer>
         <NextRootComponent />

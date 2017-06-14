@@ -29,32 +29,33 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: [
-          "react-hot-loader/webpack",
-          "awesome-typescript-loader"
+          'react-hot-loader/webpack',
+          'awesome-typescript-loader'
         ],
         exclude: path.resolve(project.root, 'node_modules'),
-        include: path.resolve(project.root, "src"),
+        include: path.resolve(project.root, 'src')
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
-        loader: "source-map-loader"
-      },
+        loader: 'source-map-loader'
+      }
     ]
   },
   plugins: [
     // [1] enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
 
-    // [1] prints more readable module names in the browser console on HMR updates
+    // [1] prints more readable module names
+    // [1] in the browser console on HMR updates
     new webpack.NamedModulesPlugin(),
 
     // [1] do not emit compiled assets that include errors
-    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   resolve: {
     // [2] http://www.typescriptlang.org/docs/handbook/react-&-webpack.html
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   output: {
     path: path.resolve(project.root, 'dist'),
@@ -70,6 +71,6 @@ module.exports = {
     historyApiFallback: true,
 
     // [1] enable HMR on the server
-    hot: true,
+    hot: true
   }
-}
+};

@@ -9,21 +9,21 @@ module.exports = {
     path: path.resolve(project.root, 'dist')
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"]
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
     loaders: [
       {
         test: /\.tsx?$/,
-        loaders: ["awesome-typescript-loader"],
+        loaders: ['awesome-typescript-loader'],
         exclude: path.resolve(project.root, 'node_modules'),
-        include: path.resolve(project.root, "src"),
+        include: path.resolve(project.root, 'src')
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
-        loader: "source-map-loader"
-      },
+        loader: 'source-map-loader'
+      }
     ]
-  },
+  }
 };

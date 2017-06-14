@@ -1,5 +1,5 @@
-declare module "react-hot-loader";
+declare module 'react-hot-loader';
 
-interface RequireImport {
+interface IRequireImport {
     default: any;
 }
