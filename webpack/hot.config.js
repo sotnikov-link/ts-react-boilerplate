@@ -27,7 +27,7 @@ module.exports = {
     loaders: [
       // [3] https://git.io/vHMJO (Glavin001/react-hot-ts)
       {
-        test: /\.tsx?$/,
+        test: /\.tsx$/,
         loaders: [
           'react-hot-loader/webpack',
           'awesome-typescript-loader'
@@ -55,7 +55,7 @@ module.exports = {
   ],
   resolve: {
     // [2] http://www.typescriptlang.org/docs/handbook/react-&-webpack.html
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.tsx', '.js', '.json']
   },
   output: {
     path: path.resolve(project.root, 'dist'),

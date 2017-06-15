@@ -9,12 +9,12 @@ module.exports = {
     path: path.resolve(project.root, 'dist')
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.json']
+    extensions: ['.tsx', '.js', '.json']
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.tsx$/,
         use: ['awesome-typescript-loader'],
         exclude: path.resolve(project.root, 'node_modules'),
         include: path.resolve(project.root, 'src')
