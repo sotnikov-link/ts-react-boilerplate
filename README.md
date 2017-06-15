@@ -6,14 +6,14 @@
 + wp2
   + dev-server
   + hot-reload react
-- eslint (possible, for config-files)
 + ts2
   + hot-reload react
 + tslint
 + karma
   + jasmine
-  - coverage
-  - reporter
+  + coverage
+  + reporter
+- enzyme
 ```
 
 ## Todo
