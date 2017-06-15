@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
   context: path.resolve(project.root, 'src'),
-  entry: { index: ['./index.tsx'] },
+  entry: { index: ['./'] },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(project.root, 'dist')
@@ -16,10 +16,13 @@ module.exports = {
       {
         test: /\.tsx$/,
         use: ['awesome-typescript-loader'],
-        exclude: path.resolve(project.root, 'node_modules'),
-        include: path.resolve(project.root, 'src')
+        exclude: /node_modules/
       },
       {
+        // source-map-loader will extract from any JavaScript file,
+        // including those in the node_modules directory.
+        // Be mindful in setting include and exclude rule conditions
+        // to maximize bundling performance.
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'

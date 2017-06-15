@@ -24,16 +24,15 @@ module.exports = {
     ]
   },
   module: {
-    loaders: [
+    rules: [
       // [3] https://git.io/vHMJO (Glavin001/react-hot-ts)
       {
         test: /\.tsx$/,
-        loaders: [
+        use: [
           'react-hot-loader/webpack',
           'awesome-typescript-loader'
         ],
-        exclude: path.resolve(project.root, 'node_modules'),
-        include: path.resolve(project.root, 'src')
+        exclude: /node_modules/
       },
       {
         enforce: 'pre',
