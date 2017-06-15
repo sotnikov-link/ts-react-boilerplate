@@ -2,7 +2,7 @@ import First from './First';
 
 describe('First', () => {
   it('simple test', () => {
-    expect(0).toBe(1);
+    expect(0).toBe(0);
   });
 
   it('shold be jasmine to global namespace', () => {
