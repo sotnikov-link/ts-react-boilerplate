@@ -12,10 +12,10 @@ module.exports = {
     extensions: ['.ts', '.tsx', '.js', '.json']
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['awesome-typescript-loader'],
+        use: ['awesome-typescript-loader'],
         exclude: path.resolve(project.root, 'node_modules'),
         include: path.resolve(project.root, 'src')
       },

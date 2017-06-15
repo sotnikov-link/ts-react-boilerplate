@@ -1,3 +1,5 @@
+var webpackTestConfig = require('./webpack/test.config');
+
 // Karma configuration
 // Generated on Tue Jun 13 2017 16:23:40 GMT+0300 (MSK)
 
@@ -29,16 +31,44 @@ module.exports = function(config) {
     // https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
       './karma.entry.js': ['webpack', 'sourcemap']
+      // './src/index.tsx': ['coverage']
     },
 
 
-    webpack: require('./webpack/test.config'),
+    webpack: webpackTestConfig,
+
+
+    remapIstanbulReporter: {
+      src: 'coverage/coverage-final.json',
+      reports: {
+        html: 'coverage/html',
+        'text-summary': null
+      }
+    },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['dots', 'karma-remap-istanbul'],
+
+
+    // // save interim raw coverage report in memory
+    // coverageReporter: {
+    //   type: 'in-memory'
+    // },
+
+
+    // // define where to save final remaped coverage reports
+    remapCoverageReporter: {
+      'text-summary': null,
+      html: './coverage/html',
+      cobertura: './coverage/cobertura.xml'
+    },
+
+
+    // make sure both reporter plugins are loaded
+    // plugins: ['karma-coverage', 'karma-remap-coverage'],
 
 
     // web server port
