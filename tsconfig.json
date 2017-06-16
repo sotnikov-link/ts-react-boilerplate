@@ -12,7 +12,6 @@
     "noImplicitReturns": true
   },
   "files": [
-    "./declarations.d.ts",
     "./node_modules/@types/webpack-env/index.d.ts",
     "./src/index.tsx"
   ],
