@@ -1,7 +1,19 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { AppContainer } from 'react-hot-loader';
+// import { AppContainer } from 'react-hot-loader';
 import RootComponent from './RootComponent';
+
+
+let AppContainer: ({children}: {children: any}) => JSX.Element | JSX.Element;
+if (module.hot) {
+  // When hot ednabled AppConteiner from 'react-hot-loader'
+  AppContainer = (require as any)('react-hot-loader').AppContainer;
+} else {
+  // When hot disabled AppContainer simple div
+  AppContainer = ({children}) => (
+    <div>{children}</div>
+  );
+}
 
 
 const rootEl = document.getElementById('root');

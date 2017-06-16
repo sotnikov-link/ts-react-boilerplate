@@ -5,21 +5,18 @@
 ```text
 + wp2
   + dev-server
-  + hot-reload react
+  + react hot-reload
+  + sourcemaps
 + ts2
-  + hot-reload react
-+ tslint
+  + react hot-reload
+  + sourcemaps
++ tslint for ts and js files
 + karma
   + jasmine
   + coverage
-  + reporter
-- enzyme
-```
-
-## Todo
-
-```text
-- delete react-hot-loader from prod-version of bundle
+  + html reporter
+  + sourcemaps
+- enzyme?
 ```
 
 ## Notes

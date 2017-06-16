@@ -1,2 +1,1 @@
-import First from './components/First';
-export default First;
+export { default } from './components/First';
