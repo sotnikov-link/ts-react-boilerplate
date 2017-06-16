@@ -1,11 +1,14 @@
 var project = require('../project.config');
 var webpack = require('webpack');
 var path = require('path');
-// TODO ↓
-// var baseConfig = require('./base.config');
+var baseConfig = require('./base.config');
+var rules = require('./rules');
+// var atomicParts = require('./atomicParts'); // atomic parts of webpack config
+
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
+
   entry: {
     index: [
       // [1] https://git.io/vH6tq (gaearon/react-hot-boilerplate)
@@ -20,27 +23,19 @@ module.exports = {
       // [1] only- means to only hot reload for successful updates
       'webpack/hot/only-dev-server',
 
-      './src/index'
+      baseConfig.entry.index
     ]
   },
+
+  output: baseConfig.output,
+
   module: {
     rules: [
-      // [3] https://git.io/vHMJO (Glavin001/react-hot-ts)
-      {
-        test: /\.tsx$/,
-        use: [
-          'react-hot-loader/webpack',
-          'awesome-typescript-loader'
-        ],
-        exclude: /node_modules/
-      },
-      {
-        enforce: 'pre',
-        test: /\.js$/,
-        loader: 'source-map-loader'
-      }
+      rules.reactHotLoader,
+      rules.sourceMapLoader
     ]
   },
+
   plugins: [
     // [1] enable HMR globally
     new webpack.HotModuleReplacementPlugin(),
@@ -52,14 +47,9 @@ module.exports = {
     // [1] do not emit compiled assets that include errors
     new webpack.NoEmitOnErrorsPlugin()
   ],
-  resolve: {
-    // [2] http://www.typescriptlang.org/docs/handbook/react-&-webpack.html
-    extensions: ['.tsx', '.js', '.json']
-  },
-  output: {
-    path: path.resolve(project.root, 'dist'),
-    filename: '[name].bundle.js'
-  },
+
+  resolve: baseConfig.resolve,
+
   devServer: {
     host: project.devServer.host,
     port: project.devServer.port,

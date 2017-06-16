@@ -1,5 +1,24 @@
-const webpack = require('webpack');
-const webpackConfig = require('./webpack/test.config');
+// This file made on base: https://git.io/vHNuc (marcules/karma-remap-istanbul).
+var webpack = require('webpack');
+var rules = require('./webpack/rules');
+var baseConfig = require('./webpack/base.config');
+
+
+var webpackConfig = {
+  module: {
+    rules: [
+      rules.awesomeTypeScriptLoader,
+      rules.sourcemapIstanbulInstrumenterLoader
+    ]
+  },
+  plugins: [
+    new webpack.SourceMapDevToolPlugin({
+      filename: null,
+      test: /\.(tsx|js)($|\?)/i
+    })
+  ],
+  resolve: baseConfig.resolve
+};
 
 
 module.exports = (config) => {
@@ -52,7 +71,7 @@ module.exports = (config) => {
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR
     // || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_WARN,
 
     // enable / disable watching file
     // and executing tests whenever any file changes

@@ -6,11 +6,15 @@ module.exports = project = {
   devServer: {
     // see https://www.wiki.com/en/Uniform_Resource_Identifier
     schema: 'http',
-    host: '0.0.0.0',
+    host: 'localhost',
     port: 8080,
     getUrl: () => [
       project.devServer.schema, '://',
-      project.devServer.host, ':', project.devServer.port
+      (
+        project.devServer.host !== '0.0.0.0' // for Windows
+          ? project.devServer.host
+          : 'localhost'
+      ) , ':', project.devServer.port
     ].join('')
   }
 };

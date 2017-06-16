@@ -1,12 +1,14 @@
-var project = require('../project.config');
 var baseConfig = require('./base.config');
-var path = require('path');
+var hotConfig = require('./hot.config');
 
-module.exports = Object.assign({}, baseConfig, {
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    open: true,
-    contentBase: path.resolve(project.root, 'static'),
-    port: project.devServer.port
-  }
-});
+
+module.exports = {
+  entry: baseConfig.entry,
+  output: baseConfig.output,
+  resolve: baseConfig.resolve,
+  module: baseConfig.module,
+  devtool: hotConfig.devtool,
+  devServer: Object.assign({}, hotConfig.devServer, {
+    hot: false
+  })
+};
