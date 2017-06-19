@@ -34,6 +34,8 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-remap-istanbul": "^0.6.0",
     "karma-sourcemap-loader": "^0.3.7",
+    "karma-typescript": "^3.0.4",
+    "karma-typescript-es6-transform": "^1.0.1",
     "karma-webpack": "^2.0.3",
     "react-hot-loader": "^3.0.0-beta.7",
     "source-map-loader": "^0.2.1",
