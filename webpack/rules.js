@@ -33,7 +33,7 @@ module.exports = {
   // for karma tests
   sourcemapIstanbulInstrumenterLoader: {
     // https://git.io/vHNuc (marcules/karma-remap-istanbul)
-    test: /src\/.+\.tsx$/,
+    test: /src(\/|\\).+\.tsx$/,
     // exclude *.spec.tsx files ↓ from reports for coverage
     exclude: /(node_modules|\.spec\.tsx$)/,
     loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true',
