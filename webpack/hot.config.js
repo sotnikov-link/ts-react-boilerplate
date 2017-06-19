@@ -55,6 +55,7 @@ module.exports = {
     port: project.devServer.port,
     contentBase: path.resolve(project.root, 'static'),
     open: true,
+    disableHostCheck: true,
 
     // [1] respond to 404s with index.html
     historyApiFallback: true,
