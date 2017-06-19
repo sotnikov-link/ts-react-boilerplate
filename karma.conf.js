@@ -1,4 +1,4 @@
-// This file made on base: https://git.io/vHNuc (marcules/karma-remap-istanbul).
+// This file based on: https://git.io/vHNuc (marcules/karma-remap-istanbul).
 var webpack = require('webpack');
 var rules = require('./webpack/rules');
 var baseConfig = require('./webpack/base.config');
@@ -8,7 +8,7 @@ var webpackConfig = {
   module: {
     rules: [
       rules.awesomeTypeScriptLoader,
-      rules.sourcemapIstanbulInstrumenterLoader
+      rules.istanbulInstrumenterLoader
     ]
   },
   plugins: [
@@ -46,6 +46,7 @@ module.exports = (config) => {
 
     remapIstanbulReporter: {
       reports: {
+        lcovonly: 'coverage/lcov.info',
         html: 'coverage/html',
         'text-summary': null
       }

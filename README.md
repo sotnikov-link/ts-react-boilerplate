@@ -1,6 +1,6 @@
 # ts-react-boilerplate
 
-## Targets
+## Done
 
 ```text
 + wp2
@@ -16,7 +16,13 @@
   + coverage
   + html reporter
   + sourcemaps
-- enzyme?
+```
+
+## To Do
+
+```text
+- componentsContext for karma.entry.tsx (https://git.io/vQeYm)
+? enzyme
 ```
 
 ## Notes

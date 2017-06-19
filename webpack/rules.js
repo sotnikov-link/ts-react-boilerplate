@@ -31,12 +31,16 @@ module.exports = {
   },
 
   // for karma tests
-  sourcemapIstanbulInstrumenterLoader: {
-    // https://git.io/vHNuc (marcules/karma-remap-istanbul)
+  istanbulInstrumenterLoader: {
+    // Based on https://git.io/vHNuc (marcules/karma-remap-istanbul),
+    // but with a fashion loader.
     test: /src(\/|\\).+\.tsx$/,
     // exclude *.spec.tsx files ↓ from reports for coverage
     exclude: /(node_modules|\.spec\.tsx$)/,
-    loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true',
-    enforce: 'post'
+    loader: 'istanbul-instrumenter-loader',
+    enforce: 'post',
+    options: {
+      esModules: true
+    }
   }
 };
