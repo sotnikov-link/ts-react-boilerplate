@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import RootComponent from './RootComponent';
 
 
-let AppContainer: ({children}: {children: any}) => JSX.Element | JSX.Element;
+let AppContainer: ({children}: {children?: any}) => JSX.Element | JSX.Element;
 if (module.hot) {
   // When hot ednabled AppConteiner from 'react-hot-loader'
   AppContainer = (require as any)('react-hot-loader').AppContainer;

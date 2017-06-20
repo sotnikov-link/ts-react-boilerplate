@@ -6,6 +6,7 @@ module.exports = project = {
   devServer: {
     // see https://www.wiki.com/en/Uniform_Resource_Identifier
     schema: 'http',
+    // Use value ↓ '0.0.0.0' for run server on all interfaces
     host: 'localhost',
     port: 8080,
     getUrl: () => [
