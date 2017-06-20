@@ -12,10 +12,13 @@
   + sourcemaps
 + tslint for ts and js files
 + karma
+  + phantomjs2 launcher
+  + chrome launcher
   + jasmine
-  + coverage
-  + html reporter
   + sourcemaps
+  + coverage
+    + html
+    + lcovonly
 ```
 
 ## To Do
